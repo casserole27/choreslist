@@ -1,0 +1,65 @@
+/*
+Author: Cassie Lewis
+https://clewisdev.com
+Date: 
+*/
+
+/*
+COOLORS color palette link
+https://coolors.co
+*/
+
+/****** VARIABLES ******/
+
+:root {
+    
+    /*COLORS*/
+  
+    
+    /*BORDER RADIUS*/
+    --br-soft: 1rem;
+    --br-round: 50%;
+    
+    /*FONT SIZES*/
+    --fs-xs: 1rem;
+    --fs-s: 1.25rem;
+    --fs-m: 1.5rem;
+    --fs-l: 2.25rem;
+    --fs-title: 2.5rem;
+}
+
+/****** MARGIN AND PADDING RESET ******/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/******* GLOBAL STYLES *******/
+
+/*
+
+COLOR PALETTE
+
+WHITE: #FEFEFE
+BLACK: #000000
+TEXT INPUT BACKGROUND: #EEEEEE
+ADD BUTTON: #FFCC68
+DELETE BUTTON: #FF9548
+CHORE: #FBDF7C
+
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Concert One', cursive;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+}
