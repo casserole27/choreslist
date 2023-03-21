@@ -42,7 +42,7 @@ Date: March 2023
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--text-input-bg);    
-    margin: .25rem;
+    margin: 2rem .5rem;
 }
 
 
@@ -53,27 +53,72 @@ h1 {
     margin: 2.75rem 0 3.1875rem 0;
 }
 
-
-ul {
-    list-style-type: none;
-    text-align: center;
-    margin-bottom: 6.6875rem;
-
-    border: 5px solid royalblue;
-}
+/****** INPUT STYLING ******/
 
 input {
     width: 100%;
     background-color: var(--text-input-bg);
-    padding: 1rem;
+    font-size: var(--fs-s);
+    padding: 2rem 1rem;
     margin-bottom: .5rem;
     border: none;
     border-radius: var(--br-soft);
 }
 
 input::placeholder {
+    color: gray;
     text-align: center;
     font-size: var(--fs-s);
+}
+
+input:hover,
+input:focus {
+    outline: 3px solid green;       
+}
+
+/****** LIST STYLING ******/
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin-bottom: 6.6875rem;
+
+    /* border: 5px solid royalblue; */
+}
+
+li {
+    font-size: var(--fs-s);
+    background-color: var(--chore);
+    padding: 1rem;
+    margin-bottom: .5rem;
+    border-radius: var(--br-soft);
+}
+
+
+@media (min-width: 450px) {
+    body {
+        margin-top: 4rem;
+    }
+    
+    h1 {
+        font-size: var(--fs-title-desktop);
+    }
+    
+    input {
+        font-size: var(--fs-s-desktop);
+        margin-right: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    input::placeholder {
+        font-size: var(--fs-s-desktop);
+    }
+  
+    li {
+        font-size: var(--fs-s-desktop);
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 /****** LAYOUT ******/
@@ -91,11 +136,7 @@ input::placeholder {
     padding: 1rem;
     margin: 0 auto;
 
-    border: 5px solid hotpink;
-}
-
-.input-container {
-    border: 5px solid maroon;
+    /* border: 5px solid hotpink; */
 }
 
 .btn-container {
@@ -103,7 +144,18 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
 
-    border: 5px solid limegreen;
+    /* border: 5px solid limegreen; */
+}
+
+@media (min-width: 550px) {
+    .input-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btn-container {
+        width: 50%;
+    }
 }
 
 /****** BUTTONS *****/
@@ -111,11 +163,20 @@ input::placeholder {
 button {
     width: 100%;
     font-family: 'Inter', sans-serif;
-    font-size: var(--fs-buttons);
+    font-size: var(--fs-s-desktop);
     padding: 1rem .25rem;
     margin-bottom:.5rem;
     border: none;
     border-radius: var(--br-soft);
+}
+
+button:hover,
+button:focus {
+    outline: 3px solid green;       
+}
+
+button:active {
+    transform: scale(.90);
 }
 
 .arrow-btn {
@@ -127,15 +188,8 @@ button {
     background-color: var(--delete-button);
 }
 
-/****** LIST STYLING ******/
-
-li {
-    font-size: var(--fs-s);
-    background-color: var(--chore);
-    padding: 1rem;
-    margin-bottom: .5rem;
-    border-radius: var(--br-soft);
+@media (min-width: 450px) {
+    button {
+        margin-bottom: 1rem;
+    }
 }
-
-/*TODO TOOLS - FLEXBOX */
-/*TODO MOBILE-FIRST LAYOUT: start with 320px wide design 
