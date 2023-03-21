@@ -24,29 +24,42 @@
             
             <h1 class="title">Choreslist</h1>
             
+            <div class="choreslist-container">
+            
+            <div class="input-container">    
+             
             <!--!ACCESSIBILITY QUESTION-->
-            <!-- <label 
+                <!-- <label 
                 for="chores-input" 
                 Enter a chore
-            </label> -->
-            <input type="text" 
+                </label> -->
+        
+                <input type="text" 
                 id="chores-input"
                 placeholder="Do the dishes" 
                 required>
-            
-            <button 
-                class="arrow-btn">
-                ->
-            </button>
-            <button class="x-btn">
-                ✕
-            </button>
-            
-            <ul 
-                class="choreslist"
-                id="choreslist">
-            </ul>
-        
+                
+                <div class="btn-container"> 
+                    <button 
+                        class="arrow-btn">
+                        ->
+                    </button>
+                    <button class="x-btn">
+                        ✕
+                    </button>
+                
+                </div><!--close btn-container-->
+             </div>   
+                
+             <ul 
+                    class="choreslist"
+                    id="choreslist">
+                    <li>placeholder</li>
+                    <li>placeholder</li>
+                    <li>placeholder</li>
+                </ul>
+         
+            </div> <!--close choreslist-container-->
         </main>
         
         <script src="index.js"></script>
