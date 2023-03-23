@@ -84,7 +84,7 @@ ul {
     text-align: center;
     margin-bottom: 6.6875rem;
 
-    border: 5px solid royalblue;
+    /* border: 5px solid royalblue; */
 }
 
 li {
@@ -137,7 +137,7 @@ li {
     padding: 1rem;
     margin: 0 auto;
 
-    border: 5px solid hotpink;
+    /* border: 5px solid hotpink; */
 }
 
 .btn-container {
@@ -145,7 +145,7 @@ li {
     display: flex;
     justify-content: space-between;
 
-    border: 5px solid limegreen;
+    /* border: 5px solid limegreen; */
 }
 
 @media (min-width: 450px) {
