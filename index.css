@@ -59,6 +59,7 @@ input {
     width: 100%;
     background-color: var(--text-input-bg);
     font-size: var(--fs-s);
+    text-align: center;
     padding: 2rem 1rem;
     margin-bottom: .5rem;
     border: none;
@@ -147,7 +148,7 @@ li {
     border: 5px solid limegreen;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 450px) {
     .input-container {
         display: flex;
         flex-direction: row;
