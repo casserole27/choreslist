@@ -45,13 +45,47 @@ function renderChores(chores) {
    
    chores.forEach(chore => {
         listItems += `
-        <li class="chore">
+        <li 
+            class="chore"
+            id="indiv-chore"
+            data-chore= "${chore}">
             ${chore}
         </li>`   
    }); 
 
     ulEl.innerHTML = listItems;
 };
+
+//! This function will remove a list item,
+//! but it comes back when you enter another chore
+//! Remove from array?
+//? https://www.geeksforgeeks.org/remove-elements-from-a-javascript-array/
+function removeIndivChore() {
+    const liEl = document.getElementsByClassName("chore");
+    for (let li of liEl) {
+        li.addEventListener("click", function() {
+            li.classList.add("li-remove");
+            // choresRemove()
+          
+            })
+    };
+
+    // const target = e.target.id
+    // const target = e.target.dataset.chore;
+    // if (target) {
+    //     console.log(target); //! Target is a string
+    //     console.log(myChores)
+        
+
+    };
+
+    // function choresRemove(myChores, value) {
+    //     return myChores.filter(function(li) {
+    //         return li != value;
+    //     })
+
+    // }
+
 
 function removeChores() {
     localStorage.clear()
@@ -65,3 +99,4 @@ function removeChores() {
 
 arrowBtn.addEventListener("click", getChores);
 xBtn.addEventListener("click", removeChores);
+document.addEventListener("click", removeIndivChore)
