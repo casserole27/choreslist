@@ -25,13 +25,15 @@ if (choresStorage) {
 /****** FUNCTIONS ******/
 
 function getChores() {
-    //! Have to do an array for more than one value
-    myChores.push(choresInput.value);
-    choresInput.value = "";
+    //! Have to use an array for multiple values
+   
+    if (!myChores.includes(choresInput.value)) {
+        myChores.push(choresInput.value);
+    }
+      
     localStorage.setItem("myChores", JSON.stringify(myChores));
     renderChores(myChores);
-
-    console.log( localStorage.getItem("myChores"));
+    choresInput.value = "";
 }
 
 
@@ -39,12 +41,14 @@ function renderChores(chores) {
     
    let listItems = ""
 
+   //! How to NOT render a blank text item
+   
    chores.forEach(chore => {
         listItems += `
         <li class="chore">
             ${chore}
         </li>`   
-   });
+   }); 
 
     ulEl.innerHTML = listItems;
 };
