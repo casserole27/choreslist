@@ -7,14 +7,21 @@
 
 /****** VARIABLES ******/
 
+const choresInput = document.getElementById("choresinput")
+let choresList = document.getElementById("choreslist");
 
-
-
+const chore = choresInput.value;
+console.log(chore);
 
 /****** FUNCTIONS ******/
 
-
-
+function renderChores() {
+    choresList += `
+        <li class="chore"
+            chore
+        </li>    
+    `
+}
 
 
 /****** EVENT LISTENERS ******/
