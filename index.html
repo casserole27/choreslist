@@ -27,27 +27,24 @@
             <div class="choreslist-container">
             
             <div class="input-container">    
-             
-            <!--!ACCESSIBILITY QUESTION-->
-                <!-- <label 
-                for="chores-input" 
-                Enter a chore
-                </label> -->
-        
+                   
                 <input type="text" 
                     id="choresinput"
                     placeholder="Do the dishes" 
+                    aria-label="Enter a chore"
                     required>
                 
                 <div class="btn-container"> 
                     <button 
                         class="arrow-btn"
-                        id="arrow-btn">
+                        id="arrow-btn"
+                        aria-label="submit">
                         ->
                     </button>
                     <button 
                         class="x-btn"
-                        id="x-btn">
+                        id="x-btn"
+                        aria-label="reset">
                         ✕
                     </button>
                 
@@ -65,20 +62,21 @@
           
              <button 
                  class="modal-close-btn" 
-                 id="modal-close-btn">
+                 id="modal-close-btn"
+                 aria-label="close">
                  X
              </button>
              
             </div>
-             
-              <ul 
-                    class="choreslist"
-                    id="ul-el">
-                    <!-- <li>placeholder</li>
-                    <li>placeholder</li>
-                    <li>placeholder</li> -->
-                </ul>
-         
+
+
+            <ul 
+                class="choreslist"
+                id="ul-el">
+                
+            </ul>
+
+                
             </div> <!--close choreslist-container-->
         </main>
         
