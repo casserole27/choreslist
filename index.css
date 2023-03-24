@@ -13,8 +13,10 @@ Date: March 2023
     --black: #000000;
     --text-input-bg: #EEEEEE;
     --add-button: #FFCC68;
+    --add-button-lt: #fce9c3;
     --delete-button: #FF9548;
     --chore: #FBDF7C;
+    --accent: rgb(20, 99, 20);
   
     
     /*BORDER RADIUS*/
@@ -22,6 +24,7 @@ Date: March 2023
     --br-round: 50%;
     
     /*FONT SIZES*/
+    --fs-xs: 1rem;
     --fs-s: 1.25rem;
     --fs-buttons: 1.25rem;
     --fs-title: 2.5rem;
@@ -74,7 +77,8 @@ input::placeholder {
 
 input:hover,
 input:focus {
-    outline: 3px solid green;       
+    outline: 5px solid var(--accent);   
+    background-color: var(--add-button-lt);   
 }
 
 /****** LIST STYLING ******/
@@ -83,8 +87,6 @@ ul {
     list-style-type: none;
     text-align: center;
     margin-bottom: 6.6875rem;
-
-    /* border: 5px solid royalblue; */
 }
 
 li {
@@ -93,12 +95,9 @@ li {
     padding: 1rem;
     margin-bottom: .5rem;
     border-radius: var(--br-soft);
-}
 
-.li-remove {
-    display: none;
+    transition: transform .20s ease-in;
 }
-
 
 @media (min-width: 450px) {
     body {
@@ -141,16 +140,12 @@ li {
     max-width: 640px;
     padding: 1rem;
     margin: 0 auto;
-
-    /* border: 5px solid hotpink; */
 }
 
 .btn-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
-
-    /* border: 5px solid limegreen; */
 }
 
 @media (min-width: 450px) {
@@ -174,15 +169,8 @@ button {
     margin-bottom:.5rem;
     border: none;
     border-radius: var(--br-soft);
-}
 
-button:hover,
-button:focus {
-    outline: 3px solid green;       
-}
-
-button:active {
-    transform: scale(.90);
+    transition: transform .20s ease-in;
 }
 
 .arrow-btn {
@@ -221,7 +209,7 @@ button:active {
     justify-content: center;
 }
 
-.modal-close-btn{
+.modal-close-btn {
     width: 30px;
     height: 30px;
     font-size: 1rem;
@@ -242,3 +230,33 @@ button:active {
     margin: .5rem;
 }
 
+/****** PSEUDO-CLASSES ******/
+
+button:hover,
+button:focus,
+li:hover,
+li:focus {
+    outline: 5px solid var(--accent);
+    transform: translateY(-.5rem);     
+}
+
+li:active,
+button:active {
+    background-color: var(--accent);
+    color: var(--white);
+    transform: scale(.90);
+}
+
+   
+ li:hover:after { /*! accessibility ideas */
+    position: absolute;
+    top: .25rem;
+    right: .25rem;
+    
+    content: "...all finished? Click me!";
+    font-size: var(--fs-xs);
+    background-color: var(--accent);
+    color: var(--white);
+    padding: .5rem 1rem;
+    border-radius: var(--br-soft);
+  } 
