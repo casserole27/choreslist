@@ -11,6 +11,8 @@ let myChores = [];
 const choresInput = document.getElementById("choresinput")
 const ulEl = document.getElementById("ul-el");
 const choresStorage = JSON.parse( localStorage.getItem("myChores") );
+const modal = document.getElementById("modal");
+const modalBtn = document.getElementById("modal-close-btn")
 
 /******BUTTONS *******/
 const arrowBtn = document.getElementById("arrow-btn");
@@ -25,78 +27,155 @@ if (choresStorage) {
 /****** FUNCTIONS ******/
 
 function getChores() {
-    //! Have to use an array for multiple values
    
     if (!myChores.includes(choresInput.value)) {
         myChores.push(choresInput.value);
     }
       
     localStorage.setItem("myChores", JSON.stringify(myChores));
-    renderChores(myChores);
+    renderChores();
     choresInput.value = "";
 }
+ //! How to NOT render a blank text item
 
-
-function renderChores(chores) {
+function renderChores() {
     
-   let listItems = ""
+    ulEl.innerHTML = "";
+    
+    for (let i = 0; i < myChores.length; i++) {
+        const chore = document.createElement("li");
+        chore.textContent = myChores[i];
+        ulEl.appendChild(chore);
+    
+        chore.addEventListener("click", function() {
+            let content = this.textContent;
+            this.style.visibility = "hidden";
+            removeChores(myChores, content);
 
-   //! How to NOT render a blank text item
-   
-   chores.forEach(chore => {
-        listItems += `
-        <li 
-            class="chore"
-            id="indiv-chore"
-            data-chore= "${chore}">
-            ${chore}
-        </li>`   
-   }); 
+          
+        });
+    
+    };
+};  
 
-    ulEl.innerHTML = listItems;
+
+function removeChores(arr, value) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === value) {
+                arr.splice(arr[i], 1)
+                localStorage.clear()
+                localStorage.setItem("myChores", JSON.stringify(arr))
+        }};
 };
+
+
+function removeAllChores() {
+    localStorage.clear()
+    myChores = [];
+    choresInput.value = "";
+    renderChores(myChores);
+}   
+ 
+function showModal() {
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+/****** EVENT LISTENERS ******/
+
+arrowBtn.addEventListener("click", getChores);
+xBtn.addEventListener("click", removeAllChores);
+modalBtn.addEventListener("click", closeModal);
+
+
+
+
+
+
+
+
+
+// for (let i = 0; i < chores.length; i++) {
+    // listItem.textContent = choresInput.value;
+    // ulEl.appendChild(listItem);
+    
+
+    // const content = listItem.textContent;
+
+    // console.log(content);
+
+
+
+    
+//    let listItems = ""
+
+//     chores.forEach(chore => {
+//         listItems += `
+//         <li 
+//             class="chore"
+//             data-item="listItem">
+//             ${chore}
+//         </li>`   
+//    }); 
+
+//     ulEl.innerHTML = listItems;
+
+
+
+    // return arr.filter(function(chore){
+    //     console.log(chore)
+    //     console.log(value.textContent)
+    //     if (chore != value.textContent) {
+    //     //    myChores.push(chore);  
+    //        console.log(myChores);   
+    //     };
+
+    
+//?https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+ 
+
+
+
+  
+
+
 
 //! This function will remove a list item,
 //! but it comes back when you enter another chore
 //! Remove from array?
 //? https://www.geeksforgeeks.org/remove-elements-from-a-javascript-array/
-function removeIndivChore() {
-    const liEl = document.getElementsByClassName("chore");
-    for (let li of liEl) {
-        li.addEventListener("click", function() {
-            li.classList.add("li-remove");
-            // choresRemove()
-          
-            })
-    };
-
-    // const target = e.target.id
-    // const target = e.target.dataset.chore;
-    // if (target) {
-    //     console.log(target); //! Target is a string
-    //     console.log(myChores)
+// document.addEventListener("click", function(e) {
+//     const target = e.target.tagName === "LI"
+//     if (target) {
+//         console.log(target); //! Target is a string
         
+//    }; 
+// }); 
+          
+      
+//     };
+// };
 
-    };
+        
+    // const liEl = document.querySelectorAll(".chore");
+ 
+    // for (let i = 0; i < liEl.length; i++) {
+    //     liEl[i].addEventListener("click", function() {
+    //         liEl[i].classList.add("li-remove");
+    //     });   
+    //     }; 
+    
 
-    // function choresRemove(myChores, value) {
-    //     return myChores.filter(function(li) {
+    // function removeChoreFromList() {
+    //     return myChores.filter(function(item => item !== li) {
     //         return li != value;
     //     })
 
     // }
 
 
-function removeChores() {
-    localStorage.clear()
-    myChores = [];
-    choresInput.value = "";
-    renderChores(myChores);
-}
-
-
-/****** EVENT LISTENERS ******/
-
-arrowBtn.addEventListener("click", getChores);
-xBtn.addEventListener("click", removeChores);
-document.addEventListener("click", removeIndivChore)
+  
