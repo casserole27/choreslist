@@ -22,7 +22,7 @@ Date: March 2023
     --br-round: 50%;
     
     /*FONT SIZES*/
-    --fs-s: 1rem;
+    --fs-s: 1.25rem;
     --fs-buttons: 1.25rem;
     --fs-title: 2.5rem;
     --fs-s-desktop: 1.875rem;
@@ -130,6 +130,7 @@ li {
 
 .main-container {
     max-width: 900px;
+    min-height: 75vh;
     background-color: var(--white);
     margin: 1rem auto;
     border: 5px solid black;
@@ -199,4 +200,45 @@ button:active {
     }
 }
 
+/****** MODAL ******/
+
+.modal {
+    max-width: 640px;
+    height: 440px;
+    background-color: var(--chore);
+    
+    position: fixed;
+    margin: auto;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    
+    border-radius: var(--br-soft);
+    
+
+    display: none; 
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-btn{
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    background-color: var(--delete-button);
+    color: white;
+    
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    
+    border-radius: var(--br-soft);
+    padding: .25rem .5rem;
+    
+}
+
+.gif {
+    width: 100%;
+    margin: .5rem;
+}
 

@@ -22,7 +22,7 @@ const xBtn = document.getElementById("x-btn");
 if (choresStorage) {
     myChores = choresStorage;
     renderChores(myChores);
-}
+};
 
 /****** FUNCTIONS ******/
 
@@ -30,12 +30,14 @@ function getChores() {
    
     if (!myChores.includes(choresInput.value)) {
         myChores.push(choresInput.value);
-    }
+    };
       
     localStorage.setItem("myChores", JSON.stringify(myChores));
     renderChores();
     choresInput.value = "";
-}
+};
+
+
  //! How to NOT render a blank text item
 
 function renderChores() {
@@ -51,22 +53,23 @@ function renderChores() {
             let content = this.textContent;
             this.style.visibility = "hidden";
             removeChores(myChores, content);
-
+        
+          if (myChores.length === 0) {
+            showModal()
+          };
           
         });
-    
-    };
-};  
-
+     };
+};
+   
 
 function removeChores(arr, value) {
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === value) {
-                arr.splice(arr[i], 1)
-                localStorage.clear()
-                localStorage.setItem("myChores", JSON.stringify(arr))
-        }};
+    const index = arr.indexOf(value);
+    if (index !== -1) {
+        arr.splice(index, 1)
+        localStorage.clear()
+        localStorage.setItem("myChores", JSON.stringify(myChores))
+    }
 };
 
 
@@ -75,15 +78,15 @@ function removeAllChores() {
     myChores = [];
     choresInput.value = "";
     renderChores(myChores);
-}   
+};   
  
 function showModal() {
     modal.style.display = "flex";
-}
+};
 
 function closeModal() {
     modal.style.display = "none";
-}
+};
 
 /****** EVENT LISTENERS ******/
 
@@ -177,5 +180,11 @@ modalBtn.addEventListener("click", closeModal);
 
     // }
 
-
+   // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === value) {
+    //             arr.splice(arr[i], 1)
+    //             localStorage.clear()
+    //             localStorage.setItem("myChores", JSON.stringify(myChores))
+                
+    //     }};
   
