@@ -246,9 +246,8 @@ button:active {
     color: var(--white);
     transform: scale(.90);
 }
-
    
- li:hover:after { /*! accessibility ideas */
+li:hover:after { /*! accessibility ideas */
     position: absolute;
     top: .25rem;
     right: .25rem;
