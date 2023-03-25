@@ -13,7 +13,7 @@ Date: March 2023
     --black: #000000;
     --text-input-bg: #EEEEEE;
     --add-button: #FFCC68;
-    --add-button-lt: #fce9c3;
+    --add-button-lt: #fad895;
     --delete-button: #FF9548;
     --chore: #FBDF7C;
     --accent: rgb(20, 99, 20);
@@ -148,29 +148,26 @@ li {
     justify-content: space-between;
 }
 
-@media (min-width: 450px) {
-    .input-container {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .btn-container {
-        width: 50%;
-    }
-}
-
 /****** BUTTONS *****/
 
 button {
     width: 100%;
     font-family: 'Inter', sans-serif;
-    font-size: var(--fs-s-desktop);
+    font-size: var(--fs-s);
     padding: 1rem .25rem;
     margin-bottom:.5rem;
     border: none;
     border-radius: var(--br-soft);
 
+    display: flex;
+    justify-content: space-evenly;
+
     transition: transform .20s ease-in;
+}
+
+span {
+     font-family: 'Concert One', cursive;
+     font-size: var(--fs-s);
 }
 
 .arrow-btn {
@@ -184,7 +181,12 @@ button {
 
 @media (min-width: 450px) {
     button {
+        font-size: var(--fs-s-desktop);
         margin-bottom: 1rem;
+    }
+
+    span {
+        font-size: var(--fs-s-desktop);
     }
 }
 
@@ -210,8 +212,7 @@ button {
 }
 
 .modal-close-btn {
-    width: 30px;
-    height: 30px;
+    width: 100px;
     font-size: 1rem;
     background-color: var(--delete-button);
     color: white;
@@ -219,10 +220,9 @@ button {
     position: absolute;
     top: .5rem;
     right: .5rem;
-    
+
+    padding: .5rem 1rem;
     border-radius: var(--br-soft);
-    padding: .25rem .5rem;
-    
 }
 
 .gif {
@@ -247,7 +247,8 @@ button:active {
     transform: scale(.90);
 }
    
-li:hover:after { /*! accessibility ideas */
+li:hover:after,
+li:focus:after { /*! accessibility ideas */
     position: absolute;
     top: .25rem;
     right: .25rem;
