@@ -65,7 +65,7 @@ function renderChores() {
         });
      };
 };
-   
+  
 
 function removeChores(arr, value) {
     const index = arr.indexOf(value);
