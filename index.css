@@ -16,7 +16,7 @@ Date: March 2023
     --add-button-lt: #fad895;
     --delete-button: #FF9548;
     --chore: #FBDF7C;
-    --accent: rgb(20, 99, 20);
+    --accent: rgb(52, 104, 52);
   
     
     /*BORDER RADIUS*/
@@ -44,7 +44,7 @@ Date: March 2023
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--text-input-bg);    
+    background-color: rgb(53, 53, 53);
     margin: 2rem .5rem;
 }
 
@@ -129,7 +129,8 @@ li {
 
 .main-container {
     max-width: 900px;
-    min-height: 75vh;
+    min-height: 80vh;
+    /* background: linear-gradient(white 50%, rgb(52, 104, 52)); */
     background-color: var(--white);
     margin: 1rem auto;
     border: 5px solid black;
@@ -152,12 +153,13 @@ li {
 
 button {
     width: 100%;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Concert One', cursive;
     font-size: var(--fs-s);
     padding: 1rem .25rem;
     margin-bottom:.5rem;
     border: none;
     border-radius: var(--br-soft);
+
 
     display: flex;
     justify-content: space-evenly;
@@ -166,7 +168,7 @@ button {
 }
 
 span {
-     font-family: 'Concert One', cursive;
+    font-family: 'Inter', sans-serif;
      font-size: var(--fs-s);
 }
 
