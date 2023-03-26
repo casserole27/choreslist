@@ -75,12 +75,6 @@ input::placeholder {
     font-size: var(--fs-s);
 }
 
-input:hover,
-input:focus {
-    outline: 5px solid var(--accent);   
-    background-color: var(--add-button-lt);   
-}
-
 /****** LIST STYLING ******/
 
 ul {
@@ -234,12 +228,21 @@ span {
 
 /****** PSEUDO-CLASSES ******/
 
+
+input:hover,
+input:focus {
+    outline: 5px solid var(--accent);   
+    background-color: var(--add-button-lt);   
+
+}
+
 button:hover,
 button:focus,
 li:hover,
 li:focus {
     outline: 5px solid var(--accent);
     transform: translateY(-.5rem);     
+    cursor: pointer;
 }
 
 li:active,
@@ -261,4 +264,6 @@ li:focus:after { /*! accessibility ideas */
     color: var(--white);
     padding: .5rem 1rem;
     border-radius: var(--br-soft);
-  } 
+    cursor: pointer;
+
+} 
