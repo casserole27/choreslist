@@ -53,7 +53,17 @@ h1 {
     font-family: 'Concert One', cursive;
     font-size: var(--fs-title);
     text-align: center;
-    margin: 2.75rem 0 3.1875rem 0;
+    margin: 2.75rem 0 1.5rem 0;
+}
+
+h2 {
+  font-size: var(--fs-xs);
+  background-color: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: var(--br-soft); 
 }
 
 /****** INPUT STYLING ******/
@@ -102,6 +112,10 @@ li {
         font-size: var(--fs-title-desktop);
     }
     
+    h2 {
+        font-size: var(--fs-s);
+    }
+    
     input {
         font-size: var(--fs-s-desktop);
         margin-right: .5rem;
@@ -124,7 +138,6 @@ li {
 .main-container {
     max-width: 900px;
     min-height: 80vh;
-    /* background: linear-gradient(white 50%, rgb(52, 104, 52)); */
     background-color: var(--white);
     margin: 1rem auto;
     border: 5px solid black;
@@ -229,11 +242,12 @@ span {
 /****** PSEUDO-CLASSES ******/
 
 
+
 input:hover,
 input:focus {
     outline: 5px solid var(--accent);   
     background-color: var(--add-button-lt);   
-
+    
 }
 
 button:hover,

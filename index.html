@@ -14,9 +14,10 @@
     </head>
 
 <!-- 
+    Scrimba M4 Solo Project: Choreslist
     Author: Cassie Lewis
     https://clewisdev.com
-    Date: March 2023 
+    Date: March 2023
  -->
     
     <body>
@@ -26,52 +27,53 @@
             
             <div class="choreslist-container">
             
-            <div class="input-container">    
-                   
-                <input type="text" 
-                    id="choresinput"
-                    placeholder="Do the dishes" 
-                    aria-label="Enter a chore"
-                    required>
-                
-                <div class="btn-container"> 
-                    <button 
-                        class="arrow-btn"
-                        id="arrow-btn">
-                           Add
-                        <span>
-                            ->
-                        </span>
-                    </button>
-                    <button 
-                        class="x-btn"
-                        id="x-btn">
-                            Reset
-                        <span>
-                            ✕
-                        </span>    
-                    </button>
-                
-                </div><!--close btn-container-->
-             </div><!--close input container-->
+                <div class="input-container">    
+                    
+                    <input type="text" 
+                        id="choresinput"
+                        placeholder="Do the dishes" 
+                        aria-label="Enter a chore"
+                        required>
+                    
+                    <div class="btn-container"> 
+                        <button 
+                            class="arrow-btn"
+                            id="arrow-btn">
+                            Add
+                            <span>
+                                ->
+                            </span>
+                        </button>
+                        <button 
+                            class="x-btn"
+                            id="x-btn">
+                                Reset
+                            <span>
+                                ✕
+                            </span>    
+                        </button>
+                    
+                    </div><!--close btn-container-->
+            
+                </div><!--close input container-->
 
              <div 
                 class="modal" 
                 id="modal">
 
-
-             <img src="done.gif" 
-                 class="gif"
-                 alt="two young men with tie dye shirts, one has a gun and says dishes are done man">
-          
-             <button 
-                 class="modal-close-btn" 
-                 id="modal-close-btn">
-                 close X
-             </button>
+                <img src="done.gif" 
+                    class="gif"
+                    alt="two young men with tie dye shirts, one has a gun and says dishes are done man">
+            
+                <button 
+                    class="modal-close-btn" 
+                    id="modal-close-btn">
+                    close X
+                </button>
              
             </div>
-
+            
+            <h2>Finished with a chore? Click it to remove!</h2>
 
             <ul 
                 class="choreslist"
@@ -80,7 +82,8 @@
             </ul>
 
                 
-            </div> <!--close choreslist-container-->
+        </div> <!--close choreslist-container-->
+
         </main>
         
         <script src="index.js"></script>

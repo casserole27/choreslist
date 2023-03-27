@@ -1,5 +1,5 @@
 /*
-    Scrimba M4 Solo Project: Oldagram 
+    Scrimba M4 Solo Project: Choreslist
     Author: Cassie Lewis
     https://clewisdev.com
     Date: March 2023
@@ -29,8 +29,10 @@ if (choresStorage) {
 function getChores() {
    
     if (!myChores.includes(choresInput.value)) {
-        myChores.push(choresInput.value);
         
+        if (choresInput.value != "") { 
+        myChores.push(choresInput.value);
+        };
     };
       
     localStorage.setItem("myChores", JSON.stringify(myChores));
@@ -65,7 +67,7 @@ function renderChores() {
         });
      };
 };
-  
+   
 
 function removeChores(arr, value) {
     const index = arr.indexOf(value);

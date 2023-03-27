@@ -140,6 +140,25 @@ Accessibility
 It is still not readily apparent that the list items should be clicked on to remove them.
  - radio or checkbox inputs may be a better option
 
+ Code reviewer tips and suggestions:
+ [Scrim](https://scrimba.com/scrim/co1964f5caef6b7599accd121)
+
+ ```javascript
+ function getChores() {
+   
+    if (!myChores.includes(choresInput.value)) {
+        
+        //! This is where the if statement should go prohibit blank rendering
+        if (choresInput.value != "") {  
+        myChores.push(choresInput.value);
+        };
+    };
+```    
+-"When it come to JavaScript, it's crucial to validate user input before accepting it."
+-add an HTML heading to instruct a user to click the list to remove
+     - this works, but it isn't the most elegant solution
+     - I still think checkboxes or radio inputs would be better, but sticking with project requirements for now
+
 
 ### Useful resources
 
