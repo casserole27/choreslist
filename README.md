@@ -50,6 +50,9 @@ Ideas
 
  ### Screenshot
 
+ ![Choreslist-mobile](choreslist-mobile.png)
+ ![Choreslist-desktop](choreslist-desktop.png)
+
 ### Links
 
 [Scrim](https://scrimba.com/scrim/co66f4672bc42a373fbd1968f)
@@ -73,6 +76,7 @@ Ideas
 ### Built with
 
 - semantic HTML5
+- mobile first design
 - CSS custom properties
 - Responsive Web Design
 - vanilla JavaScript
